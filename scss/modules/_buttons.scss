@@ -1,0 +1,219 @@
+// ----------------------------------------------------------------------------
+// BUTTONS
+// ----------------------------------------------------------------------------
+%btn {
+    width: fit-content;
+    display: inline-block;
+    padding: rem(12) rem(30);
+    appearance: none;
+    border-radius: rem(0);
+    cursor: pointer;
+    font-family: $subs-font;
+    font-size: rem(16);
+
+    @include bp(xs) {
+        font-size: rem(15);
+        letter-spacing: rem(0.73);
+    }
+    font-weight: 800;
+    letter-spacing: rem(1.43);
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    position: relative;
+    transition: all .3s;
+    box-shadow: $button-shadow;
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none !important;
+    }
+}
+
+%btn--log {
+    color: $grey-darker;
+    background: $yellow-dark;
+    border: rem(3) solid $yellow-dark;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $red;
+        color: $white;
+        border: rem(3) solid $white;
+    }
+}
+
+%btn--join {
+    color: $white;
+    background: rgba($red, 0.9);
+    border: rem(3) solid $red;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background-color: $btn-dark-color;
+        border: rem(3) solid $white;
+    }
+}
+%btn--view {
+    
+    color: $grey-darker;
+    background: $yellow-dark;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background-color: $red;
+    }
+}
+
+%btn--main {
+    color: $grey-darker;
+    background: $yellow-dark;
+    padding: rem(10) rem(20);
+    font-size: rem(20);
+
+    @include bp(md) {
+        padding: rem(30) rem(60);
+        font-size: rem(26);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        letter-spacing: rem(4);
+        background-color: $red;
+        color: $white;
+    }
+}
+
+%btn--main_inverse {
+    color: $black;
+    background-color: $primary-color !important;
+    border-color: $primary-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        border-color: $btn-dark-color !important;
+        background-color: $btn-dark-color !important;
+    }
+}
+
+%btn--border {
+    border: rem(3) solid $black;
+    background-color: transparent;
+    color: $black;
+
+    &:before {
+        background: $white;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: rem(3) solid $btn-dark-color;
+        background-color: $secondary-color;
+        color: $black;
+    }
+}
+
+%btn--border--inv {
+    background: transparent;
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $primary-color;
+        background-color: $primary-color !important;
+        color: $white;
+    }
+}
+
+%btn--inv {
+
+    background-color: transparent;
+    border-color: transparent;
+    color: $primary-color;
+
+    &:before {
+        background: $primary-color;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $primary-color;
+        color: white;
+    }
+}
+
+%btn--border--black {
+    background: transparent;
+    color: $white;
+    border-color: $grey-darker;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: rem(3) solid $red !important;
+        background-color: $red;
+    }
+}
+
+
+
+button.btn,
+a.btn,
+input.btn,
+span.btn {
+    @extend %btn;
+
+    &--main {
+        @extend %btn--main;
+    }
+
+    &--log {
+        @extend %btn--log;
+    }
+
+    &--join {
+        @extend %btn--join;
+    }
+
+    &--view {
+        @extend %btn--view;
+    }
+
+    &--border {
+        @extend %btn--border;
+    }
+
+    &--border--inv {
+        @extend %btn--border--inv;
+    }
+
+    &--border--black {
+        @extend %btn--border--black;
+    }
+
+    &--inv {
+        @extend %btn--inv;
+    }
+
+    &--main_inverse {
+        @extend %btn--main_inverse;
+    }
+}
+
+.pseudolink {
+    cursor: pointer;
+}

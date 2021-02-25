@@ -1,0 +1,24 @@
+// @import "_reset.scss";
+// @import "_variables.scss";
+// @import "_mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300;400;600;800&family=Red+Hat+Display:wght@900&display=swap');
+// Variables, functions & mixins
+// ----------------------------------------------------------------------------
+@import "utils/functions";
+@import "utils/mixin";
+@import "utils/reset";
+@import "utils/variables";
+
+// Setup theme defaults (elementos básicos del theme: layout, tipografia, botones…)
+// ----------------------------------------------------------------------------
+@import "setup/grid";
+@import "setup/layout";
+@import "setup/typography";
+
+// Módulos
+// ---------------------------------------------------------------------------
+@import "modules/animations"; // Animaciones custom
+@import "modules/buttons"; // Btns
+@import "modules/footer"; // Pie de la página
+@import "modules/nav"; // Nav de la web
+@import "modules/sections"; // Cajas de contenidos

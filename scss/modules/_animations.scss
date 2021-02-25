@@ -1,0 +1,69 @@
+// --------------------------------------------------------------------------------
+// Animaciones específicas
+// --------------------------------------------------------------------------------
+// SLIDER BACKGROUND
+// ----------------------------------------------------------
+@keyframes slide {
+    from {
+        background-position: 0 0;
+        opacity: 1;
+    }
+
+    to {
+        background-position: 0 -90vh ;
+        opacity: 1;
+    }
+}
+
+@keyframes slidemob {
+    from {
+        background-position: 100vh 0;
+        opacity: 1;
+    }
+
+    to {
+        background-position: -50vh 0;
+        opacity: 1;
+    }
+}
+@keyframes shrink {
+    0% {
+      background-size: 150% 150%;
+      opacity: 1;
+    }
+    100% {
+      background-size: 100% 100%;
+      opacity: 1;
+    }
+  }
+
+@keyframes zoomin {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  }
+
+
+// ANIMACIÓN LIKE HEART
+//----------------------------------------
+
+@keyframes bouncy {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05); }
+}
+@keyframes bouncy {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05);}
+}
+
+// SETTINGS DEL BOUNCY
+// ---------------------------------------
+.bouncy {
+    animation: bouncy 0.6s;
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+}

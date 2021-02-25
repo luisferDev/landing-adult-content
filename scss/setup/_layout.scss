@@ -1,0 +1,107 @@
+// ----------------------------------------------------------------------------
+// Ajustes sólo Layout
+// ----------------------------------------------------------------------------
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+[role="main"] {
+    position: relative;
+    z-index: z(default);
+    flex-grow: 1;
+    overflow: visible;
+}
+
+main {
+    overflow-x: hidden !important;
+    background-color: $grey-lightest;
+}
+
+header {
+    max-width: 100vw;
+    z-index: 9999;
+    overflow-x: hidden !important;
+}
+
+section {
+
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+
+    @include bp(sm) {
+        height: auto;
+        min-height: rem(600);
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @include bp(md) {
+        height: 100vh;
+        min-height: rem(800);
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+.row.container {
+    
+    @include mq("mobile-landscape") {
+        min-width: 100%;   
+    }
+}
+
+.container {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+
+    @media (min-width: 1600) {
+        min-width: rem(1530);
+        margin: 0 auto;
+    }
+}
+
+//Titles
+// -------------------------------------------------------------
+.tag-box {
+    max-width: rem(195);
+    background: $grey-darker;
+    color: white;
+    margin: 0;
+    padding: rem($gutter*2.5) rem($gutter) rem($gutter/2);
+    display: block;
+    box-shadow: $button-shadow;
+}
+
+// BG COLORS
+// -------------------------------------------------------------
+.bg-color- {
+
+    &grey {
+        background: $grey-darker;
+        color: $white;
+    }
+
+    &black {
+        background: $black;
+        color: $white;
+    }
+    &yellowdark {
+        background: $yellow-dark;
+        color: $black;
+    }
+    
+}

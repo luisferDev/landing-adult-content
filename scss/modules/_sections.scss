@@ -1,0 +1,530 @@
+// --------------------------------------------------------------------------------
+// SECTIONS
+// --------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
+// SECTION HERO SLIDER
+// ------------------------------------------------------------------------------
+
+#slider {
+
+    width: 100%;
+    
+    @include flex-center;
+
+    @include mq("mobile-landscape") {
+        >.row {
+            width: 80%;
+            padding-bottom: rem($gutter * 2);
+        }
+    }
+
+    .flexslider {
+        width: 100%;
+        height: auto;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-top: rem($gutter * 4);
+
+        @include bp(md) {
+            margin-top: rem($gutter * 6);
+        }
+
+        .flex-control-paging li a {
+            width: rem(35);
+            height: rem(4);
+            background: $black;
+            background: rgba($black, 0.5);
+            box-shadow: inset rem(-1) rem(-1) rem(2) rgba(rgba($black, 0.5), 0.5);
+            border-radius: none !important;
+
+            @include bp(sm) {
+                width: rem(65);
+            }
+
+            &.flex-active {
+                background: $yellow-light;
+            }
+        }
+
+        .flex-direction-nav {
+            a {
+                width: rem(50);
+                height: rem(50);
+                color: rgba($black, .8);
+                text-shadow: rem(5) rem(2) 0 rgba($yellow-light, .9);
+                transition: all .3s ease-in-out;
+            }
+        }
+
+        .slides {
+            box-shadow: 0 rem(10) rem(15) rem(-10);
+
+            @include bp(xs) {
+                height: rem(565);
+            }
+
+            img {
+                height: rem(500);
+
+                @include bp(md) {
+                    height: rem(650);
+                }
+
+
+                &.fs-slide1 {
+                    width: 100%;
+                    height: 360px;
+                    object-fit: contain;
+                    object-position: left bottom;
+
+                    @include bp(md) {
+                        height: rem(650);
+                    }
+                }
+
+                &.fs-slide2 {
+                    width: 100%;
+                    height: 360px;
+                    object-fit: contain;
+                    object-position: center bottom;
+
+                    @include bp(md) {
+                        height: rem(650);
+                    }
+                }
+            }
+
+            li {
+
+                .row {
+                    @include bp(md) {
+                        height: rem(650);
+                    }
+                }
+
+                // Background Ken Burns
+                // ---------------------------------------------
+                &.slide-image {
+                    background-size: cover;
+                    background-repeat: repeat;
+                    background-position: center;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+
+                    &.flex-active-slide {
+                        //animation: slide 60s ease;
+                        animation: shrink 10s linear;
+
+                        @include bp(xs) {
+                            animation: slidemob 30s linear;
+                        }
+                    }
+
+                    // Texto dentro del Slider
+                    // ---------------------------------------------
+                    .txt-copy {
+                        position: absolute;
+                        color: $white;
+                        z-index: 9999;
+                        text-transform: uppercase;
+                        margin-left: rem($gutter * 3);
+                        text-shadow: $txt-shadow;
+
+                        @include bp(xs) {
+                            top: 7%;
+                            margin-left: rem($gutter);
+                        }
+
+                        @include bp(sm) {
+                            transform: translateY(150px);
+                        }
+
+                        @include bp(md) {
+                            transform: none;
+                            bottom: 10%;
+                        }
+
+                        
+                        .h1,
+                        .h2,
+                        .h3 {
+                            font-family: $font-alt;
+                            letter-spacing: -1px;
+                        }
+
+                        span {
+                            display: block;
+                        }
+
+                        &.text-right {
+                            
+                            @include bp(xs) {
+                                text-align: left !important;
+                            }
+                            
+                            @include bp(sm) {
+                                margin-left: 0;
+                                transform: translate(-40px, 100px);
+                            }
+    
+                            @include bp(md) {
+                                transform: translateX(-60px);
+                                bottom: 10%;
+                            }
+                        }
+
+                        .btn.btn--main {
+                            text-shadow: none;
+                        }
+                    }
+
+                    // Franjas Rojas Multiply
+                    // ---------------------------------------------
+                    .shape1 {
+                        overflow: hidden;
+
+                        @include bp(xs) {
+                            margin-top: 172px;
+                        }
+
+                        &:after {
+                            content: url(../img/shape-sl-01.png);
+                            width: 80px;
+                            height: 100px;
+                            z-index: -1;
+                            display: block;
+                            position: absolute;
+                            left: 35%;
+                            top: -1%;
+                            mix-blend-mode: multiply;
+
+                            @include bp(xs) {
+                                left: -100vw;
+                                top: 30px;
+                            }
+                        }
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            background: linear-gradient(180deg, transparent 0, transparent 1%, transparent 35%, rgba(0, 0, 0, .8));
+                            z-index: -1;
+                        }
+                    }
+
+                    .shape2 {
+                        overflow: hidden;
+
+                        @include bp(xs) {
+                            margin-top: 172px;
+                        }
+
+                        &:after {
+                            content: url(../img/shape-sl-02.png);
+                            mix-blend-mode: multiply;
+                            width: 80px;
+                            height: 100px;
+                            z-index: -1;
+                            display: block;
+                            position: absolute;
+                            left: -11%;
+                            top: 30%;
+
+                            @include bp(xs) {
+                                left: -640px;
+                            }
+                        }
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            background: linear-gradient(-160deg, transparent 0, transparent 20%, transparent 45%, rgba(0, 0, 0, 0.8));
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+    .flex-c {
+        padding-right: rem($gutter * 5);
+        padding-top: rem($gutter * 5);
+        @include flex-center;
+    }
+
+    .flex-r {
+        padding-right: rem($gutter * 5);
+        padding-top: rem($gutter * 5);
+        @include flex-right;
+    }
+}
+
+
+
+// ------------------------------------------------------------------------------
+// SECTION LATEST VIDEOS
+// ------------------------------------------------------------------------------
+#vid-dst {
+
+    height: auto;
+    padding-top: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-bottom: rem($gutter*4);
+    
+    @include bp(md) {
+        margin-top: rem(-30);
+    }
+
+    h2 {
+
+        @include bp(sm) {
+            padding-right: rem($gutter*4);
+        }
+
+        @include bp(md) {
+            padding-right: 0;
+        }
+
+    }
+
+    a {
+        font-weight: 800 !important;
+
+        &.btn.btn--view {
+            position: absolute;
+            font-size: rem(20);
+            padding: rem($gutter*1.5) rem($gutter*2);
+            top: 40px;
+            left: 185px;
+            z-index: 1;
+            box-shadow: $button-shadow;
+
+            @include bp(md) {
+                top: 100px;
+            }
+
+        }
+
+    }
+
+    .vid-thumbs {
+        background-color: $white;
+        //border: rem(10) solid $grey-darker;
+
+        &::before {
+            content: '';
+            display: block;
+            height: rem(20);
+            position: absolute;
+            top: rem(180);
+            background: $white;
+            width: 100vw;
+            z-index: -1;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            height: rem(20);
+            position: absolute;
+            bottom: 10.5%;
+            background: $grey-darker;
+            width: 100vw;
+            z-index: -1;
+        }
+    }
+
+    .title-info {
+        position: absolute;
+        bottom: 0;
+        z-index: 3;
+        width: 100%;
+        background: rgba($white, .4);
+        padding: rem(10) rem($gutter);
+
+        h3,
+        h4 {
+            font-size: rem(14);
+            transform: translateX(30px);
+        }
+        h3 {
+            font-size: rem(18);
+        }
+        h4 {
+            font-size: rem(20);
+        }
+    }
+
+    .thumb {
+        width: 100%;
+        min-height: rem(510);
+        object-fit: cover;
+        object-position: center;
+
+        @include bp(sm) {
+            height: rem(250);
+        }
+
+        @include bp(md) {
+            height: rem(330);
+        }
+    }
+
+    .vid-right {
+        .thumb {
+            object-position: rem(-80) center;
+        }
+    }
+
+    .card {
+        background-color: transparent;
+        border: 0;
+
+        @include bp(xs) {
+            padding: rem(10);
+
+            &:nth-of-type(1) {
+                margin-top: rem(10)
+            }
+        }
+
+        @include bp(md) {
+            padding: 0;
+        }
+    }
+
+    // VIDEO CONTAINER
+    // -------------------------------
+    figure {
+        margin: 0 auto;
+        background-color: #000;
+        min-height: rem(510);
+        overflow: hidden;
+        position: relative;
+        overflow: hidden;
+          
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: rem(430);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .img-hide {
+            display: none;
+        }
+
+        video {
+            object-fit: cover;
+            width: 100%;
+            min-height: rem(510);
+            position: relative;
+            margin-bottom: -40px;
+    
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(180deg, transparent 0, transparent 1%, transparent 35%, rgba(255, 255, 255, 0.8));
+                z-index: 2;
+            }
+        }
+    }
+
+    
+
+    // lIKES
+    // -------------------------------
+    .love {
+        font-size: 0.9rem;
+        color: $heart;
+      }
+      .wrapper {
+        padding-top: rem(50);
+        position: absolute;
+        right: rem($gutter);
+        bottom: rem(10);
+    
+        .like-button {
+          position: relative;
+          width: rem(50);
+          height: rem(50);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          margin: 0 auto;
+          text-decoration: none;
+          overflow: hidden;
+    
+          .like-overlay {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: rem(50);
+            height: rem(50);
+            transform: scale(0);
+            transition: all .4s;
+            z-index: 0;
+          }
+    
+          i {
+    
+            &.not-liked {
+              display: block;
+              color: $black;
+              position: relative;
+              z-index: 1;
+            }
+    
+            &.is-liked {
+              display: none;
+              color: $red;
+              position: relative;
+              z-index: 1;
+            }
+          }
+    
+          &.is-active {
+            .like-overlay {
+              transform: scale(1);
+            }
+    
+            i {
+              &.not-liked {
+                display: none;
+              }
+              &.is-liked {
+                display: block;
+              }
+            }
+    
+          }
+        }
+      }
+}

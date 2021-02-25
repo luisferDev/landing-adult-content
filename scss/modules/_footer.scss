@@ -1,0 +1,178 @@
+// ----------------------------------------------------------------------------
+// FOOTER
+// ----------------------------------------------------------------------------
+footer {
+    width: 100%;
+    height: auto;
+    background-color: $grey-lightest;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: rem(60);
+    font-size: rem(16);
+    box-shadow: $box-shadow-section;
+
+    @include bp(sm) {
+        padding-top: rem($gutter * 4);
+    }
+
+    h2 {
+        margin-bottom: rem($gutter * 2);
+    }
+
+    .logo-footer {
+        width: rem(300);
+        margin-top: rem($gutter * 4);
+        margin-bottom: rem($gutter * 2);
+
+        @include bp(md) {
+            width: 20vw;
+        }
+    }
+
+    .h4 {
+        letter-spacing: 1.5px;
+    }
+
+    .btn.btn--main {
+        padding: rem(30) rem(60);
+        margin: rem($gutter*2) 0 rem($gutter * 5);
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        @include bp(xs) {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: flex-start;
+
+            li {
+                margin-bottom: rem(15);
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    color: $white;
+                    font-size: rem(18);
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        text-decoration: none;
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-form {
+        form {
+            display: flex;
+            flex-flow: column;
+            margin: 0 auto;
+
+            label {
+                font-weight: 600;
+                font-size: rem(18);
+                margin-top: rem($gutter);
+            }
+
+            input {
+                outline: none;
+
+                &[type="text"],
+                &[type="email"] {
+                    font-size: rem(16);
+                    padding: rem(5);
+                    background: transparent;
+                    border: none;
+                    border-bottom: rem(1) solid $white;
+                    margin-bottom: rem($gutter);
+
+                    @include bp(md) {
+                        padding: rem(10);
+                    }
+                }
+
+                &.btn {
+
+                    margin-top: rem($gutter * 1.5);
+                    border: rem(3) solid $white;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $white;
+                        border: rem(3) solid $white;
+                    }
+
+                    @include bp(xs) {
+                        margin-top: rem(40);
+                    }
+                }
+            }
+        }
+    }
+
+    // Contenido + CTA
+    // ----------------------------------------------------------
+    .contact-content {
+        background-color: $white;
+        margin-top: rem($gutter*2);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding-top: rem($gutter);
+        padding-bottom: rem($gutter);
+        color: $black;
+
+        .contact-ico {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: rem($gutter);
+            margin-bottom: rem($gutter);
+
+            a {
+                font-weight: 800;
+                font-size: rem(50);
+                
+                i.fab {
+                    color: $black;
+                    margin: 0 rem($gutter);
+                    transition: all .2s ease;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $red;
+                    }
+                }
+
+                
+
+            }
+        }
+
+        .contact-legal {
+            p {
+                font-size: rem(14);
+                font-weight: 600;
+                text-align: center;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+}
