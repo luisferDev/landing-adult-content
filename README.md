@@ -1,2 +1,3 @@
 # pmg-test
-Test de la landing
+Test de una landing
+Advertencia: Contenido para adultos exclusivamente.
